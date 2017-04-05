@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- <a href="{% url 'clubs:create' %}">New Post</a> -->
+
+
+<form action = "{% url 'clubs:listing' %}" method="post">
+<div class="container1 text-center" >
+	<h4>Search for Clubs by Name</h4>
+	{% csrf_token %}
+	<input type="text" name="search_clubs" id ="search_clubs" placeholder="Search by name.."></input>
+	<br>
+		<button class="btn btn-primary btn-default btn" type="submit" >Search</button>
+		<button class="btn btn-default btn" action="{% url 'home' %}" >Reset</button>
+	<br>
+</form>
+</div>
+
+
+
+<form method="POST" action="{% url 'clubs:listingcounties' %}">
+	<div class="container text-center">
+	{% csrf_token %}
+	
+	<h4>Search for Clubs by County</h4>
+		<select name="County">
+			<option name="County" id= "County" value="Antrim">Antrim</option>
+			<option name="County" id= "County" value="Armagh">Armagh</option>
+			<option name="County" id= "County" value="Carlow">Carlow</option>
+			<option name="County" id= "County" value="Cavan">Cavan</option>
+			<option name="County" id= "County" value="Clare">Clare</option>
+			<option name="County" id= "County" value="Cork">Cork</option>
+			<option name="County" id= "County" value="Donegal">Donegal</option>
+			<option name="County" id= "County" value="Down">Down</option>
+			<option name="County" id= "County" value="Dublin">Dublin</option>
+			<option name="County" id= "County" value="Fermanagh">Fermanagh</option>
+			<option name="County" id= "County" value="Dublin">Dublin</option>
+			<option name="County" id= "County" value="Galway">Galway</option>
+			<option name="County" id= "County" value="Kerry">Kerry</option>
+			<option name="County" id= "County" value="Kildare">Kildare</option>
+			<option name="County" id= "County" value="Kilkenny">Kilkenny</option>
+			<option name="County" id= "County" value="Laois">Laois</option>
+			<option name="County" id= "County" value="Leitrim">Leitrim</option>
+			<option name="County" id= "County" value="Limerick">Limerick</option>
+			<option name="County" id= "County" value="Derry">Derry</option>
+			<option name="County" id= "County" value="Longford">Longford</option>
+			<option name="County" id= "County" value="Louth">Louth</option>
+			<option name="County" id= "County" value="Mayo">Mayo</option>
+			<option name="County" id= "County" value="Meath">Meath</option>
+			<option name="County" id= "County" value="Monaghan">Monaghan</option>
+			<option name="County" id= "County" value="Offaly">Offaly</option>
+			<option name="County" id= "County" value="Roscommon">Roscommon</option>
+			<option name="County" id= "County" value="Sligo">Sligo</option>
+			<option name="County" id= "County" value="South Tipperary">Tipperary</option>
+			<option name="County" id= "County" value="Tyrone">Tyrone</option>
+			<option name="County" id= "County" value="Waterford">Waterford</option>
+			<option name="County" id= "County" value="Westmeath">Westmeath</option>
+			<option name="County" id= "County" value="Wexford">Wexford</option>
+			<option name="County" id= "County" value="Wicklow">Wicklow</option>
+		</select>
+		<br>
+		<input class="btn btn-primary btn-default btn" type="submit">
+	</div>
+</form>
+
+
+{% endblock %}

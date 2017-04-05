@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>GAA Pitch Finder</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+	.jumbotron {
+			background-color: #289949;
+			color: #fff;
+	}
+	</style>
+	<style>
+	.navbar1 { 
+		background-color: #999999;
+		color: #ffffff;
+	}
+	table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+	td {
+		text-align: right;
+		padding: 8px;
+	}
+	th {
+		text-align: left;
+		padding: 8px;
+	}
+	
+	
+
+	#custom-search-input {
+			margin:0;
+			margin-top: 10px;
+			padding: 0;
+		}
+	 
+		#custom-search-input .search-query {
+			padding-right: 3px;
+			padding-right: 4px \9;
+			padding-left: 3px;
+			padding-left: 4px \9;
+			/* IE7-8 doesn't have border-radius, so don't indent the padding */
+	 
+			margin-bottom: 0;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+		}
+	 
+		#custom-search-input button {
+			border: 0;
+			background: none;
+			/** belows styles are working good */
+			padding: 2px 5px;
+			margin-top: 2px;
+			position: relative;
+			left: -28px;
+			/* IE7-8 doesn't have border-radius, so don't indent the padding */
+			margin-bottom: 0;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+			color:#D9230F;
+		}
+	 
+		.search-query:focus + button {
+			z-index: 3;   
+		}
+	
+	</style>
+</head>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>                        
+			</button>
+			<a class="navbar-brand" href="{% url 'home' %}">GPF</a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="{% url 'home' %}">HOME</a></li>
+				<li><a href="{% url 'accounts:login' %}">LOGIN</a></li>
+				<li><a href="{% url 'accounts:signup' %}">SIGNUP</a></li>
+				<li><a href="#">YOUR PAGE</a></li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE
+					<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Login</a></li>
+						<li><a href="#">Signup</a></li>
+						<li><a href="#">About</a></li> 
+					</ul>
+				</li>
+				<li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<div class="jumbotron text-center" >
+<br>
+	<h2>GAA Pitch Finder</h2> 
+	<p>Find your Local Club!</p> 
+</div>
+
+{% block content %}
+{% endblock %}
+
+<br>
+<br>
+
+<nav class="navbar1 navbar-default navbar-fixed-bottom text-center">
+  	<p>Martin Quinn</p> 
+	<a href="https://github.com/MartinQuinn">GitHub</a>
+</nav>
